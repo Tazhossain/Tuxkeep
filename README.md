@@ -33,7 +33,7 @@ tuxkeep
 
 ### Alternative Install (Short URL)
 ```bash
-pkg install -y curl openssl-tool && curl -fsSL https://bit.ly/tuxkeep -o tuxkeep && chmod u+x tuxkeep && mv tuxkeep $PREFIX/bin/ && tuxkeep
+pkg install -y curl openssl-tool && curl -fsSL https://bit.ly/Tuxkeep -o tuxkeep && chmod u+x tuxkeep && mv tuxkeep $PREFIX/bin/ && tuxkeep
 ```
 
 ## 📖 Usage

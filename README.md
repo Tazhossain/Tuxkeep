@@ -25,7 +25,7 @@ pkg install -y curl openssl-tool && curl -fsSL https://raw.githubusercontent.com
 ### Manual Installation
 ```bash
 pkg install -y curl openssl-tool pigz tar
-curl -fsSL https://raw.githubusercontent.com/Tazhossain/Tuxkeep/main/tuxkeep.sh -o tuxkeep
+curl -fsSL https://raw.githubusercontent.com/Tazhossain/Tuxkeep/main/Tuxkeep.sh -o tuxkeep
 chmod u+x tuxkeep
 mv tuxkeep $PREFIX/bin/
 tuxkeep

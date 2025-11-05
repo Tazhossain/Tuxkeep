@@ -101,11 +101,11 @@ perform_backup() {
     if [ "$backup_type" = "full" ]; then
         source_path="/data/data/com.termux/files"
         local temp_archive="$backup_path/.tuxkeep_temp_$.tar.gz"
-        local password=$(openssl-tool rand -base64 32 2>/dev/null)
+        local password=$(openssl rand -base64 32 2>/dev/null)
         [ -z "$password" ] && error "Failed to generate encryption key" && sleep 2 && return 1
-        
+
         if tar -I "pigz -9" -cf "$temp_archive" -C "$source_path" home usr 2>/dev/null; then
-            if openssl-tool enc -aes-256-cbc -pbkdf2 -iter 100000 -pass pass:"$password" -in "$temp_archive" -out "$backup_file" 2>/dev/null; then
+            if openssl enc -aes-256-cbc -pbkdf2 -iter 100000 -pass pass:"$password" -in "$temp_archive" -out "$backup_file" 2>/dev/null; then
                 echo "$password" > "${backup_file}.key"
                 chmod 600 "${backup_file}.key"
                 rm -f "$temp_archive"
@@ -217,7 +217,7 @@ perform_restore() {
         success "${backup_type^} restore completed!"
         log "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
         echo ""
-        info "Restarting Termux in 3 seconds..."
+        info "Termux is Restarting..."
         sleep 3
         pkill -9 -f com.termux
     else
@@ -498,7 +498,7 @@ uninstall_tuxkeep() {
     success "TuxKeep uninstalled!"
     echo ""
     info "Your backups are safe in TuxKeep folder"
-    info "Termux will restart in 3 seconds..."
+    info "Termux is Restarting..."
     echo ""
     sleep 3
     pkill -9 -f com.termux
@@ -615,7 +615,7 @@ ALIASES
     echo ""
     log "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     echo ""
-    info "Restarting Termux to apply changes..."
+    info "Termux is Restarting..."
     echo ""
     sleep 3
     pkill -9 -f com.termux

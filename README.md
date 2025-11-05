@@ -3,7 +3,6 @@
 
 <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/4e0f5a79-9b89-46e2-adfd-31b7d072caf1" />
 
-
 TuxKeep is a powerful, encrypted backup solution for Termux that offers full system backups, home directory backups, and package-level backup/restore capabilities.
 
 ## ✨ Features
@@ -19,7 +18,7 @@ TuxKeep is a powerful, encrypted backup solution for Termux that offers full sys
 
 ### One-Line Install
 ```bash
-pkg install -y curl openssl-tool && curl -fsSL https://raw.githubusercontent.com/Tazhossain/Tuxkeep/main/tuxkeep.sh -o tuxkeep && chmod u+x tuxkeep && mv tuxkeep $PREFIX/bin/ && tuxkeep
+pkg install -y curl openssl-tool && curl -fsSL https://raw.githubusercontent.com/Tazhossain/Tuxkeep/main/Tuxkeep.sh -o tuxkeep && chmod u+x tuxkeep && mv tuxkeep $PREFIX/bin/ && tuxkeep
 ```
 
 ### Manual Installation
@@ -31,9 +30,20 @@ mv tuxkeep $PREFIX/bin/
 tuxkeep
 ```
 
+### Offline Installation
+If you have `Tuxkeep.sh` downloaded on your phone:
+```bash
+pkg install -y openssl-tool pigz tar && chmod u+x ~/storage/downloads/Tuxkeep.sh && cp ~/storage/downloads/Tuxkeep.sh $PREFIX/bin/tuxkeep && tuxkeep
+```
+
+Or from current directory:
+```bash
+pkg install -y openssl-tool pigz tar && chmod u+x Tuxkeep.sh && mv Tuxkeep.sh $PREFIX/bin/tuxkeep && tuxkeep
+```
+
 ### Alternative Install (Short URL)
 ```bash
-pkg install -y curl openssl-tool && curl -fsSL https://bit.ly/Tuxkeep -o tuxkeep && chmod u+x tuxkeep && mv tuxkeep $PREFIX/bin/ && tuxkeep
+pkg install -y curl openssl-tool && curl -fsSL https://bit.ly/tuxkeep -o tuxkeep && chmod u+x tuxkeep && mv tuxkeep $PREFIX/bin/ && tuxkeep
 ```
 
 ## 📖 Usage
